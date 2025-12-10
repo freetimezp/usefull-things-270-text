@@ -2,7 +2,7 @@ const scene = document.getElementById("scene");
 const logo = document.getElementById("logo");
 
 const TEXT = "CREATIVE";
-const LETTER_COUNT = 120; // random letters
+const LETTER_COUNT = 120;
 const randomLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let letters = [];
@@ -24,7 +24,7 @@ for (let i = 0; i < LETTER_COUNT; i++) {
     animateRandom(span);
 }
 
-// random floating animation
+// random floating
 function animateRandom(el) {
     setInterval(() => {
         el.style.left = Math.random() * window.innerWidth + "px";
@@ -38,7 +38,7 @@ setTimeout(() => {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
 
-    const spacing = 60; // distance between characters
+    const spacing = 60;
     const startX = centerX - (TEXT.length * spacing) / 2;
 
     letters.slice(0, TEXT.length).forEach((el, i) => {
@@ -51,14 +51,9 @@ setTimeout(() => {
         el.style.transform = "rotate(0deg)";
     });
 
-    // Remove extra letters
-    letters.slice(TEXT.length).forEach((el) => {
-        el.style.opacity = 0;
-    });
-
     // Show final logo text
     setTimeout(() => {
         logo.style.opacity = 1;
         logo.style.transform = "translate(-50%, -50%) scale(1.05)";
-    }, 1200);
-}, 3000);
+    }, 2200);
+}, 4000);
